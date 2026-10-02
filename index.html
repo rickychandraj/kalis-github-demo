@@ -1,0 +1,574 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Kalis Klinik Kulit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: specimen-plate clinic site. Hero pairs the headline with a skin cross-section; treatments read like labelled lab cards. */
+:root{
+  --bg:#F1F4F1;
+  --surface:#FFFFFF;
+  --ink:#15221D;
+  --muted:#56655E;
+  --line:#D2DAD5;
+  --jade:#2A6653;
+  --jade-soft:#DDEAE3;
+  --on-jade:#FFFFFF;
+  --rose:#A35A4A;
+  --epi:#F0DACF;
+  --dermis:#E5BFB1;
+  --hypo:#F2E7CD;
+  --cell:#CDB985;
+  --hair:#3B2F2A;
+  --vessel:#B9695A;
+  --f-display:"Bodoni Moda","Bodoni 72",Didot,Georgia,serif;
+  --f-body:"Albert Sans","Helvetica Neue",Arial,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --radius:6px;
+  --gutter:clamp(16px,4vw,40px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F1714; --surface:#16211C; --ink:#E6ECE8; --muted:#9BABA3; --line:#2A3833;
+    --jade:#86C7AF; --jade-soft:#1D3029; --on-jade:#0D1914; --rose:#E1A091;
+    --epi:#5B4039; --dermis:#47302A; --hypo:#3F3829; --cell:#7A6B48; --hair:#D8C7BE; --vessel:#C9786A;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F1714; --surface:#16211C; --ink:#E6ECE8; --muted:#9BABA3; --line:#2A3833;
+  --jade:#86C7AF; --jade-soft:#1D3029; --on-jade:#0D1914; --rose:#E1A091;
+  --epi:#5B4039; --dermis:#47302A; --hypo:#3F3829; --cell:#7A6B48; --hair:#D8C7BE; --vessel:#C9786A;
+  color-scheme:dark;
+}
+@media (prefers-reduced-motion:no-preference){ html{scroll-behavior:smooth} }
+*,*::before,*::after{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.6;padding-inline:var(--gutter)}
+[id]{scroll-margin-top:84px}
+.wrap{max-width:1140px;margin-inline:auto}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--jade);outline-offset:3px}
+
+/* Header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;margin-inline:calc(var(--gutter) * -1);padding-inline:var(--gutter);background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top-in{display:flex;align-items:center;gap:24px;min-height:64px}
+.brand{display:flex;align-items:baseline;gap:10px;text-decoration:none;margin-right:auto;min-width:0}
+.brand-word{font-family:var(--f-display);font-style:italic;font-weight:500;font-size:1.8rem;line-height:1;letter-spacing:-.01em}
+.brand-sub{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.top nav{display:flex;gap:24px}
+.top nav a{color:var(--muted);text-decoration:none;font-size:.92rem}
+.top nav a:hover{color:var(--ink)}
+@media (max-width:860px){.top nav{display:none}}
+@media (max-width:460px){.brand-sub{display:none}}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 22px;border-radius:999px;border:1px solid var(--jade);background:var(--jade);color:var(--on-jade);font:600 .95rem/1 var(--f-body);text-decoration:none;cursor:pointer;transition:background-color .2s,border-color .2s,color .2s;white-space:nowrap}
+.btn:hover{background:color-mix(in srgb,var(--jade) 84%,var(--ink));border-color:color-mix(in srgb,var(--jade) 84%,var(--ink))}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn-ghost:hover{background:transparent;border-color:var(--ink)}
+.btn-sm{min-height:38px;padding:0 16px;font-size:.86rem}
+
+/* Shared type */
+.eyebrow{font-family:var(--f-mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--jade);margin:0 0 16px}
+h1,h2{font-family:var(--f-display);font-weight:500;text-wrap:balance;margin:0}
+h1{font-size:clamp(2.5rem,6vw,4.4rem);line-height:1.02;letter-spacing:-.02em;margin-bottom:22px}
+h1 em{font-style:italic;color:var(--jade)}
+h2{font-size:clamp(1.9rem,3.6vw,2.8rem);line-height:1.08;letter-spacing:-.015em}
+.mono-label{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(32px,5vw,72px);align-items:center;padding-block:clamp(40px,7vw,88px) clamp(48px,7vw,96px)}
+@media (max-width:900px){.hero{grid-template-columns:minmax(0,1fr)}}
+.lead{font-size:1.125rem;color:var(--muted);max-width:52ch;margin:0 0 28px}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:36px}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:0;padding-top:18px;border-top:1px solid var(--line)}
+.facts dd{margin:4px 0 0;font-weight:600;font-variant-numeric:tabular-nums}
+@media (max-width:540px){
+  .facts{grid-template-columns:minmax(0,1fr);gap:10px}
+  .facts div{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+  .facts dd{margin:0;text-align:right}
+}
+
+/* Specimen plate */
+.plate{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.plate-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 12px;padding:12px 16px;border-bottom:1px solid var(--line)}
+.plate svg{display:block;width:100%;height:auto}
+.sv-epi{fill:var(--epi)} .sv-dermis{fill:var(--dermis)} .sv-hypo{fill:var(--hypo)}
+.sv-vessel{fill:none;stroke:var(--vessel);stroke-width:2.2;stroke-linecap:round;opacity:.75}
+.sv-cells circle{fill:none;stroke:var(--cell);stroke-width:1.5}
+.sv-hair{fill:none;stroke:var(--hair);stroke-width:2.2;stroke-linecap:round}
+.sv-bulb{fill:var(--hair);opacity:.85}
+.sv-lbl text{font-family:var(--f-mono);font-size:10px;letter-spacing:.08em;fill:var(--ink);opacity:.72}
+.probe line{stroke:var(--jade);stroke-width:2;transition:stroke-width .15s}
+.probe .tip{fill:var(--jade)}
+.probe .badge{fill:var(--surface);stroke:var(--jade);stroke-width:1.5}
+.probe text{font-family:var(--f-mono);font-size:11px;font-weight:500;fill:var(--jade);text-anchor:middle}
+.probe{transition:opacity .15s}
+.probe.dim{opacity:.3}
+.probe.hl line{stroke-width:3.5}
+.legend{list-style:none;margin:0;padding:14px 16px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 16px;border-top:1px solid var(--line);font-size:.9rem}
+.legend li{display:flex;align-items:center;gap:10px;min-width:0;cursor:default}
+.legend small{display:block;font-family:var(--f-mono);font-size:.68rem;color:var(--muted);letter-spacing:.04em}
+.key{flex:none;width:24px;height:24px;border-radius:50%;border:1.5px solid var(--jade);color:var(--jade);font:500 .72rem/21px var(--f-mono);text-align:center}
+@media (max-width:420px){.legend{grid-template-columns:minmax(0,1fr)}}
+
+/* Sections */
+.sec{padding-block:clamp(56px,8vw,104px);border-top:1px solid var(--line)}
+.sec-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px 48px;align-items:end;margin-bottom:36px}
+.sec-head .eyebrow{grid-column:1/-1;margin:0}
+.sec-lead{margin:0;color:var(--muted);max-width:50ch}
+@media (max-width:760px){.sec-head{grid-template-columns:minmax(0,1fr)}}
+
+/* Filter chips */
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.chip{font:500 .88rem/1 var(--f-body);padding:10px 16px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer;transition:border-color .15s}
+.chip:hover{border-color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.chip .n{font-family:var(--f-mono);font-size:.72rem;margin-left:6px;opacity:.6;font-variant-numeric:tabular-nums}
+
+/* Treatment cards */
+.grid-t{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:20px}
+.t-card{display:flex;flex-direction:column;gap:16px;min-width:0;padding:22px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius)}
+.t-cat{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--rose);margin:0 0 6px}
+.t-card h3{font-family:var(--f-display);font-weight:500;font-size:1.55rem;line-height:1.15;margin:0;text-wrap:balance}
+.t-desc{margin:0;color:var(--muted);font-size:.95rem}
+.spec{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 16px;margin:0;padding-block:14px;border-block:1px dashed var(--line)}
+.spec dd{margin:2px 0 0;font-size:.9rem;font-weight:500;font-variant-numeric:tabular-nums}
+.depth-top{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.depth-val{font-size:.84rem;font-weight:500}
+.depth-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;margin-top:8px}
+.depth-bar i{height:6px;border-radius:1px;background:var(--line)}
+.depth-bar i.on{background:var(--jade)}
+.t-foot{margin-top:auto;display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap}
+.price{margin:0;font-family:var(--f-mono);font-weight:500;font-size:1.02rem;font-variant-numeric:tabular-nums}
+.price .mono-label{display:block;font-weight:400}
+
+/* Steps */
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px}
+@media (max-width:920px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:540px){.steps{grid-template-columns:minmax(0,1fr)}}
+.steps li{display:flex;flex-direction:column;gap:8px;padding-top:16px;border-top:2px solid var(--ink);min-width:0}
+.step-n{font-family:var(--f-display);font-style:italic;font-size:2.4rem;line-height:1;color:var(--jade)}
+.step-t{margin:0;font-weight:600;font-size:1.05rem}
+.steps p{margin:0;color:var(--muted);font-size:.95rem}
+
+/* Doctors */
+.docs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 28px}
+@media (max-width:920px){.docs{grid-template-columns:minmax(0,1fr)}}
+.doc{display:grid;grid-template-columns:64px minmax(0,1fr);gap:16px;padding-block:22px;border-top:1px solid var(--line)}
+.avatar{width:64px;height:64px;border-radius:50%;background:var(--jade-soft);color:var(--jade);display:grid;place-items:center;font-family:var(--f-display);font-style:italic;font-size:1.35rem}
+.doc h3{margin:0;font-size:1.05rem;font-weight:600;line-height:1.3}
+.doc p{margin:6px 0 0;font-size:.93rem;color:var(--muted)}
+.sched{display:block;margin-top:10px;font-family:var(--f-mono);font-size:.78rem;color:var(--ink);font-variant-numeric:tabular-nums}
+
+/* FAQ */
+.faq{max-width:820px}
+.faq details{border-top:1px solid var(--line);padding-block:18px}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;font-weight:600;font-size:1.05rem}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";flex:none;font-family:var(--f-mono);color:var(--jade);font-size:1.1rem;line-height:1.4}
+.faq details[open] summary::after{content:"\2013"}
+.faq details p{margin:10px 0 0;color:var(--muted);max-width:65ch}
+
+/* Booking */
+.book{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:32px;align-items:start}
+@media (max-width:900px){.book{grid-template-columns:minmax(0,1fr)}}
+.form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;padding:clamp(20px,3vw,32px);background:var(--surface);border:1px solid var(--line);border-radius:var(--radius)}
+@media (max-width:560px){.form{grid-template-columns:minmax(0,1fr)}}
+.field{display:flex;flex-direction:column;gap:6px;min-width:0}
+.field.full{grid-column:1/-1}
+.field label{font-size:.86rem;font-weight:600}
+.field .hint{font-size:.8rem;color:var(--muted)}
+input,select,textarea{font:inherit;font-size:.95rem;width:100%;min-width:0;padding:11px 12px;border:1px solid var(--line);border-radius:4px;background:var(--bg);color:var(--ink)}
+textarea{resize:vertical;min-height:84px}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--jade);outline-offset:0;border-color:var(--jade)}
+.form-actions{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;gap:14px}
+.err{margin:0;color:var(--rose);font-size:.88rem}
+.result{grid-column:1/-1;padding:18px;border-radius:4px;background:var(--jade-soft)}
+.result h3{margin:0 0 4px;font-size:1.05rem}
+.result p{margin:0 0 12px;font-size:.9rem;color:var(--muted)}
+.result dl{display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 16px;margin:0;font-size:.92rem}
+.result dt{color:var(--muted)}
+.result dd{margin:0;font-weight:500}
+.info{display:flex;flex-direction:column;gap:26px}
+.info h3{margin:6px 0 0;font-size:1rem;font-weight:600}
+.info p{margin:4px 0 0;color:var(--muted)}
+.hours{width:100%;border-collapse:collapse;margin-top:8px;font-size:.93rem;font-variant-numeric:tabular-nums}
+.hours td{padding:7px 0;border-bottom:1px dashed var(--line)}
+.hours td:last-child{text-align:right;font-family:var(--f-mono);font-size:.85rem}
+.contact-row{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:6px}
+.contact-row span{font-family:var(--f-mono);font-size:.95rem;user-select:all}
+
+/* Footer */
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;padding-block:32px;border-top:1px solid var(--line);color:var(--muted);font-size:.86rem}
+.foot .brand-word{font-size:1.3rem;color:var(--ink)}
+</style>
+
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="#top" aria-label="Kalis, ke atas halaman">
+      <span class="brand-word">Kalis</span>
+      <span class="brand-sub">Klinik Kulit &amp; Estetika</span>
+    </a>
+    <nav aria-label="Navigasi utama">
+      <a href="#perawatan">Perawatan</a>
+      <a href="#alur">Alur kunjungan</a>
+      <a href="#dokter">Dokter</a>
+      <a href="#faq">Tanya jawab</a>
+    </nav>
+    <a class="btn btn-sm" href="#janji">Buat janji</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero wrap" id="top">
+    <div>
+      <p class="eyebrow">Dermatologi &amp; estetika · Kebayoran Baru</p>
+      <h1>Sayangi Kulit Anda</h1>
+      <p class="lead">Setiap perawatan di Kalis diawali analisis kulit oleh dokter spesialis dermatologi, lalu disusun menjadi rencana yang sesuai dengan kondisi kulit Anda.</p>
+      <div class="cta-row">
+        <a class="btn" href="#janji">Buat janji konsultasi</a>
+        <a class="btn btn-ghost" href="#perawatan">Lihat perawatan</a>
+      </div>
+      <dl class="facts">
+        <div><dt class="mono-label">Konsultasi dokter</dt><dd>Rp 250.000</dd></div>
+        <div><dt class="mono-label">Jam buka</dt><dd>Sen–Sab · 10.00–20.00</dd></div>
+        <div><dt class="mono-label">Analisis kulit 3D</dt><dd>Termasuk konsultasi</dd></div>
+      </dl>
+    </div>
+
+    <figure class="plate">
+      <div class="plate-head">
+        <span class="mono-label">Gbr. 1 · Penampang kulit wajah</span>
+        <span class="mono-label">Skema, tidak berskala</span>
+      </div>
+      <svg viewBox="0 0 440 300" role="img" aria-labelledby="svg-title">
+        <title id="svg-title">Penampang kulit dengan lapisan epidermis, dermis, dan hipodermis, serta kedalaman empat jenis perawatan</title>
+        <path class="sv-epi" d="M0 62 C50 52 95 72 150 62 S255 52 310 62 S400 72 440 58 L440 300 L0 300 Z"/>
+        <path class="sv-dermis" d="M0 102 C50 95 95 109 150 102 S255 95 310 102 S400 109 440 98 L440 300 L0 300 Z"/>
+        <path class="sv-vessel" d="M0 200 C60 194 110 206 170 200 S290 194 350 201 S420 205 440 198"/>
+        <path class="sv-hypo" d="M0 214 C50 207 95 221 150 214 S255 207 310 214 S400 221 440 210 L440 300 L0 300 Z"/>
+        <g class="sv-cells">
+          <circle cx="40" cy="274" r="16"/><circle cx="84" cy="292" r="13"/><circle cx="122" cy="250" r="16"/>
+          <circle cx="152" cy="284" r="17"/><circle cx="196" cy="254" r="15"/><circle cx="236" cy="284" r="16"/>
+          <circle cx="272" cy="250" r="14"/><circle cx="310" cy="278" r="17"/><circle cx="348" cy="248" r="15"/>
+          <circle cx="384" cy="284" r="15"/><circle cx="418" cy="252" r="14"/>
+        </g>
+        <path class="sv-hair" d="M386 10 Q395 36 398 64 L402 148"/>
+        <ellipse class="sv-bulb" cx="403" cy="156" rx="6" ry="9"/>
+        <g class="sv-lbl">
+          <text x="14" y="44">PERMUKAAN</text>
+          <text x="14" y="88">EPIDERMIS</text>
+          <text x="14" y="164">DERMIS</text>
+          <text x="14" y="236">HIPODERMIS</text>
+        </g>
+        <g class="probe" data-k="a"><line x1="160" y1="37" x2="160" y2="84"/><circle class="tip" cx="160" cy="84" r="3.5"/><circle class="badge" cx="160" cy="26" r="10"/><text x="160" y="30">A</text></g>
+        <g class="probe" data-k="b"><line x1="215" y1="37" x2="215" y2="124"/><circle class="tip" cx="215" cy="124" r="3.5"/><circle class="badge" cx="215" cy="26" r="10"/><text x="215" y="30">B</text></g>
+        <g class="probe" data-k="c"><line x1="270" y1="37" x2="270" y2="160"/><circle class="tip" cx="270" cy="160" r="3.5"/><circle class="badge" cx="270" cy="26" r="10"/><text x="270" y="30">C</text></g>
+        <g class="probe" data-k="d"><line x1="325" y1="37" x2="325" y2="192"/><circle class="tip" cx="325" cy="192" r="3.5"/><circle class="badge" cx="325" cy="26" r="10"/><text x="325" y="30">D</text></g>
+      </svg>
+      <ul class="legend" id="legend">
+        <li data-k="a"><span class="key">A</span><span>Chemical peeling<small>Epidermis</small></span></li>
+        <li data-k="b"><span class="key">B</span><span>Laser pico toning<small>Dermis atas</small></span></li>
+        <li data-k="c"><span class="key">C</span><span>Microneedling<small>Dermis tengah</small></span></li>
+        <li data-k="d"><span class="key">D</span><span>Laser CO₂ fraksional<small>Dermis dalam</small></span></li>
+      </ul>
+    </figure>
+  </section>
+
+  <section class="sec wrap" id="perawatan">
+    <div class="sec-head">
+      <p class="eyebrow">Perawatan</p>
+      <h2>Pilih berdasarkan keluhan kulit</h2>
+      <p class="sec-lead">Harga tercantum per sesi. Jumlah sesi final ditentukan dokter setelah konsultasi dan analisis kulit.</p>
+    </div>
+    <div class="chips" id="chips" role="group" aria-label="Saring perawatan berdasarkan keluhan"></div>
+    <div class="grid-t" id="grid"></div>
+  </section>
+
+  <section class="sec wrap" id="alur">
+    <div class="sec-head">
+      <p class="eyebrow">Alur kunjungan pertama</p>
+      <h2>Sekitar 45 menit sebelum tindakan</h2>
+      <p class="sec-lead">Kunjungan pertama selalu dimulai dengan diagnosis. Tindakan bisa dilakukan di hari yang sama bila kulit siap.</p>
+    </div>
+    <ol class="steps">
+      <li><span class="step-n">1</span><p class="step-t">Daftar &amp; riwayat kulit</p><span class="mono-label">± 10 menit</span><p>Isi riwayat alergi, obat yang sedang diminum, dan produk perawatan yang dipakai sehari-hari.</p></li>
+      <li><span class="step-n">2</span><p class="step-t">Analisis kulit 3D</p><span class="mono-label">± 15 menit</span><p>Pemindaian memotret pori, pigmen, kemerahan, dan tekstur untuk dijadikan data awal.</p></li>
+      <li><span class="step-n">3</span><p class="step-t">Konsultasi dokter</p><span class="mono-label">± 20 menit</span><p>Dokter menjelaskan diagnosis, lalu menyusun rencana perawatan lengkap dengan estimasi biaya.</p></li>
+      <li><span class="step-n">4</span><p class="step-t">Tindakan &amp; kontrol</p><span class="mono-label">Sesuai jadwal</span><p>Tindakan dimulai sesuai rencana. Kontrol gratis dua minggu setelah sesi pertama.</p></li>
+    </ol>
+  </section>
+
+  <section class="sec wrap" id="dokter">
+    <div class="sec-head">
+      <p class="eyebrow">Tim dokter</p>
+      <h2>Ditangani dokter, setiap kunjungan</h2>
+      <p class="sec-lead">Semua tindakan laser, injeksi, dan peeling medis dilakukan langsung oleh dokter.</p>
+    </div>
+    <div class="docs">
+      <article class="doc">
+        <div class="avatar" aria-hidden="true">AP</div>
+        <div>
+          <h3>dr. Anindya Prameswari, Sp.D.V.E</h3>
+          <p>Spesialis dermatologi. Fokus pada jerawat aktif dan bekas jerawat.</p>
+          <span class="sched">Sen · Rab · Jum &nbsp;10.00–16.00</span>
+        </div>
+      </article>
+      <article class="doc">
+        <div class="avatar" aria-hidden="true">RW</div>
+        <div>
+          <h3>dr. Rangga Wiratama, Sp.D.V.E</h3>
+          <p>Spesialis dermatologi. Fokus pada laser dan gangguan pigmen seperti melasma.</p>
+          <span class="sched">Sel · Kam · Sab &nbsp;13.00–20.00</span>
+        </div>
+      </article>
+      <article class="doc">
+        <div class="avatar" aria-hidden="true">MK</div>
+        <div>
+          <h3>dr. Melati Kusumawardani</h3>
+          <p>Dokter estetika bersertifikat. Fokus pada skin booster dan perawatan anti-penuaan.</p>
+          <span class="sched">Sen–Sab &nbsp;15.00–20.00</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="sec wrap" id="faq">
+    <div class="sec-head">
+      <p class="eyebrow">Tanya jawab</p>
+      <h2>Sebelum Anda datang</h2>
+    </div>
+    <div class="faq">
+      <details open>
+        <summary>Apakah harus konsultasi sebelum perawatan?</summary>
+        <p>Ya, untuk kunjungan pertama. Biaya konsultasi Rp 250.000 sudah termasuk analisis kulit 3D, dan dipotong dari biaya tindakan bila tindakan dilakukan di hari yang sama.</p>
+      </details>
+      <details>
+        <summary>Apakah aman untuk ibu hamil atau menyusui?</summary>
+        <p>Beberapa tindakan, seperti peeling tertentu, laser, dan injeksi, tidak dilakukan selama hamil atau menyusui. Dokter akan memilihkan alternatif yang aman setelah konsultasi.</p>
+      </details>
+      <details>
+        <summary>Kapan hasilnya mulai terlihat?</summary>
+        <p>Umumnya setelah 2–3 sesi. Untuk perawatan yang merangsang kolagen, perbaikan tekstur masih berlanjut hingga tiga bulan setelah sesi terakhir.</p>
+      </details>
+      <details>
+        <summary>Bagaimana jika saya perlu menjadwal ulang?</summary>
+        <p>Jadwal bisa diubah tanpa biaya paling lambat 24 jam sebelumnya melalui WhatsApp klinik.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="sec wrap" id="janji">
+    <div class="sec-head">
+      <p class="eyebrow">Buat janji</p>
+      <h2>Pilih jadwal konsultasi</h2>
+      <p class="sec-lead">Admin klinik akan mengonfirmasi jadwal melalui WhatsApp dalam satu jam kerja.</p>
+    </div>
+    <div class="book">
+      <form class="form" id="form" novalidate>
+        <div class="field">
+          <label for="f-nama">Nama lengkap</label>
+          <input id="f-nama" name="nama" autocomplete="name" placeholder="Contoh: Sari Wulandari" required>
+        </div>
+        <div class="field">
+          <label for="f-wa">Nomor WhatsApp</label>
+          <input id="f-wa" name="wa" type="tel" inputmode="tel" autocomplete="tel" placeholder="0812 3456 7890" required>
+        </div>
+        <div class="field full">
+          <label for="f-perawatan">Perawatan</label>
+          <select id="f-perawatan" name="perawatan"></select>
+        </div>
+        <div class="field">
+          <label for="f-tanggal">Tanggal</label>
+          <input id="f-tanggal" name="tanggal" type="date" required>
+          <span class="hint">Senin–Sabtu</span>
+        </div>
+        <div class="field">
+          <label for="f-jam">Jam</label>
+          <select id="f-jam" name="jam">
+            <option>10.00</option><option>11.30</option><option>13.00</option><option>14.30</option>
+            <option selected>16.00</option><option>17.30</option><option>19.00</option>
+          </select>
+        </div>
+        <div class="field full">
+          <label for="f-catatan">Keluhan singkat <span class="hint">(opsional)</span></label>
+          <textarea id="f-catatan" name="catatan" placeholder="Contoh: jerawat di dagu muncul tiap menjelang haid"></textarea>
+        </div>
+        <div class="form-actions">
+          <button class="btn" type="submit">Kirim permintaan janji</button>
+          <p class="err" id="err" role="alert" hidden></p>
+        </div>
+        <div class="result" id="result" hidden>
+          <h3>Permintaan janji siap</h3>
+          <p>Ini situs contoh, jadi permintaan tidak dikirim ke mana pun. Ringkasan janji Anda:</p>
+          <dl id="summary"></dl>
+        </div>
+      </form>
+
+      <aside class="info">
+        <div>
+          <span class="mono-label">Alamat</span>
+          <h3>Kalis Klinik Kulit &amp; Estetika</h3>
+          <p>Jl. Wolter Monginsidi No. 48, Kebayoran Baru, Jakarta Selatan 12170. Parkir tersedia di basement.</p>
+        </div>
+        <div>
+          <span class="mono-label">Jam praktik</span>
+          <table class="hours">
+            <tbody>
+              <tr><td>Senin–Jumat</td><td>10.00–20.00</td></tr>
+              <tr><td>Sabtu</td><td>10.00–20.00</td></tr>
+              <tr><td>Minggu &amp; libur nasional</td><td>Tutup</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <span class="mono-label">WhatsApp klinik</span>
+          <div class="contact-row">
+            <span id="wa-num">0812-0000-4817</span>
+            <button class="btn btn-ghost btn-sm" type="button" id="copy-wa">Salin nomor</button>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap foot">
+  <span class="brand-word">Kalis</span>
+  <span>Situs contoh. Nama klinik, dokter, alamat, nomor kontak, dan harga bersifat fiktif.</span>
+</footer>
+
+<script>
+(function(){
+  var DEPTH = ['Epidermis','Dermis atas','Dermis tengah','Dermis dalam'];
+  var TREATMENTS = [
+    {id:'akne', name:'Facial Akne Klinis', cat:'Facial medis', concerns:['jerawat'], desc:'Ekstraksi komedo steril, masker asam salisilat, dan sinar LED biru untuk menekan bakteri penyebab jerawat.', durasi:'60 menit', downtime:'Tidak ada', sesi:'4 sesi', jeda:'2 minggu', harga:350000, depth:1},
+    {id:'peel', name:'Chemical Peeling', cat:'Peeling', concerns:['jerawat','kusam','flek'], desc:'Larutan asam salisilat 30% atau glikolat 35% mengangkat sel kulit mati agar warna dan tekstur kulit lebih rata.', durasi:'30 menit', downtime:'1–3 hari mengelupas', sesi:'3–6 sesi', jeda:'2–4 minggu', harga:450000, depth:1},
+    {id:'pico', name:'Laser Pico Toning', cat:'Laser', concerns:['flek','kusam'], desc:'Pulsa laser picodetik memecah pigmen melanin penyebab flek dan melasma dengan panas yang minimal.', durasi:'30 menit', downtime:'0–1 hari kemerahan', sesi:'5 sesi', jeda:'2 minggu', harga:1500000, depth:2},
+    {id:'mn', name:'Microneedling', cat:'Regenerasi', concerns:['bopeng','penuaan'], desc:'Jarum mikro sedalam 0,5–2 mm memicu pembentukan kolagen baru untuk memperbaiki bekas jerawat dan pori besar.', durasi:'60 menit', downtime:'2–3 hari', sesi:'3 sesi', jeda:'4 minggu', harga:1200000, depth:3},
+    {id:'booster', name:'Skin Booster HA', cat:'Injeksi', concerns:['penuaan','kusam'], desc:'Injeksi asam hialuronat ke lapisan dermis untuk hidrasi dari dalam dan memperhalus garis halus.', durasi:'45 menit', downtime:'1–2 hari bentol kecil', sesi:'3 sesi', jeda:'4 minggu', harga:2200000, depth:3},
+    {id:'co2', name:'Laser CO₂ Fraksional', cat:'Laser', concerns:['bopeng','penuaan'], desc:'Kolom-kolom mikro laser meremajakan jaringan kulit. Pilihan utama untuk bekas jerawat bopeng yang dalam.', durasi:'45 menit', downtime:'5–7 hari', sesi:'3 sesi', jeda:'6 minggu', harga:2500000, depth:4}
+  ];
+  var CONCERNS = [['semua','Semua'],['jerawat','Jerawat aktif'],['bopeng','Bekas jerawat'],['flek','Flek & melasma'],['kusam','Kulit kusam'],['penuaan','Garis halus']];
+  var rp = function(n){ return 'Rp ' + n.toLocaleString('id-ID'); };
+  var esc = function(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); };
+  var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Chips */
+  var chips = document.getElementById('chips');
+  chips.innerHTML = CONCERNS.map(function(c, i){
+    var n = c[0] === 'semua' ? TREATMENTS.length : TREATMENTS.filter(function(t){ return t.concerns.indexOf(c[0]) > -1; }).length;
+    return '<button type="button" class="chip" data-c="' + c[0] + '" aria-pressed="' + (i === 0) + '">' + esc(c[1]) + '<span class="n">' + n + '</span></button>';
+  }).join('');
+
+  /* Cards */
+  var grid = document.getElementById('grid');
+  grid.innerHTML = TREATMENTS.map(function(t){
+    var bars = '';
+    for (var i = 1; i <= 4; i++) bars += '<i' + (i <= t.depth ? ' class="on"' : '') + '></i>';
+    return '<article class="t-card" data-concerns="' + t.concerns.join(' ') + '">' +
+      '<header><p class="t-cat">' + esc(t.cat) + '</p><h3>' + esc(t.name) + '</h3></header>' +
+      '<p class="t-desc">' + esc(t.desc) + '</p>' +
+      '<dl class="spec">' +
+        '<div><dt class="mono-label">Durasi</dt><dd>' + esc(t.durasi) + '</dd></div>' +
+        '<div><dt class="mono-label">Masa pemulihan</dt><dd>' + esc(t.downtime) + '</dd></div>' +
+        '<div><dt class="mono-label">Dianjurkan</dt><dd>' + esc(t.sesi) + '</dd></div>' +
+        '<div><dt class="mono-label">Jeda antarsesi</dt><dd>' + esc(t.jeda) + '</dd></div>' +
+      '</dl>' +
+      '<div><div class="depth-top"><span class="mono-label">Kedalaman</span><span class="depth-val">' + DEPTH[t.depth - 1] + '</span></div>' +
+      '<div class="depth-bar" aria-hidden="true">' + bars + '</div></div>' +
+      '<div class="t-foot"><p class="price"><span class="mono-label">Mulai dari</span>' + rp(t.harga) + '</p>' +
+      '<button type="button" class="btn btn-ghost btn-sm" data-pick="' + t.id + '">Pilih perawatan ini</button></div>' +
+    '</article>';
+  }).join('');
+
+  chips.addEventListener('click', function(e){
+    var b = e.target.closest('.chip'); if (!b) return;
+    var c = b.dataset.c;
+    chips.querySelectorAll('.chip').forEach(function(x){ x.setAttribute('aria-pressed', String(x === b)); });
+    grid.querySelectorAll('.t-card').forEach(function(card){
+      card.hidden = !(c === 'semua' || card.dataset.concerns.split(' ').indexOf(c) > -1);
+    });
+  });
+
+  /* Booking select */
+  var sel = document.getElementById('f-perawatan');
+  sel.innerHTML = '<option value="konsultasi">Konsultasi &amp; analisis kulit · Rp 250.000</option>' +
+    TREATMENTS.map(function(t){ return '<option value="' + t.id + '">' + esc(t.name) + ' · mulai ' + rp(t.harga) + '</option>'; }).join('');
+
+  grid.addEventListener('click', function(e){
+    var b = e.target.closest('[data-pick]'); if (!b) return;
+    sel.value = b.dataset.pick;
+    document.getElementById('janji').scrollIntoView({behavior: reduced ? 'auto' : 'smooth', block: 'start'});
+    setTimeout(function(){ document.getElementById('f-nama').focus({preventScroll:true}); }, reduced ? 0 : 450);
+  });
+
+  /* Dates */
+  var pad = function(n){ return String(n).padStart(2, '0'); };
+  var iso = function(d){ return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()); };
+  var today = new Date();
+  var next = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 1);
+  if (next.getDay() === 0) next.setDate(next.getDate() + 1);
+  var tgl = document.getElementById('f-tanggal');
+  tgl.min = iso(today);
+  tgl.value = iso(next);
+
+  /* Submit */
+  var form = document.getElementById('form');
+  var err = document.getElementById('err');
+  var result = document.getElementById('result');
+  function fail(msg){ err.textContent = msg; err.hidden = false; result.hidden = true; }
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var nama = document.getElementById('f-nama').value.trim();
+    var wa = document.getElementById('f-wa').value.trim();
+    var digits = wa.replace(/\D/g, '');
+    if (!nama) return fail('Isi nama lengkap terlebih dahulu.');
+    if (digits.length < 10) return fail('Nomor WhatsApp minimal 10 digit, contoh 0812 3456 7890.');
+    if (!tgl.value) return fail('Pilih tanggal kunjungan.');
+    var p = tgl.value.split('-').map(Number);
+    var d = new Date(p[0], p[1] - 1, p[2]);
+    var start = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+    if (d < start) return fail('Tanggal sudah lewat. Pilih hari ini atau setelahnya.');
+    if (d.getDay() === 0) return fail('Klinik tutup hari Minggu. Pilih hari Senin–Sabtu.');
+    err.hidden = true;
+    var tanggal = d.toLocaleDateString('id-ID', {weekday:'long', day:'numeric', month:'long', year:'numeric'});
+    var rows = [
+      ['Nama', nama], ['WhatsApp', wa],
+      ['Perawatan', sel.options[sel.selectedIndex].text],
+      ['Jadwal', tanggal + ', pukul ' + document.getElementById('f-jam').value + ' WIB']
+    ];
+    var cat = document.getElementById('f-catatan').value.trim();
+    if (cat) rows.push(['Keluhan', cat]);
+    document.getElementById('summary').innerHTML = rows.map(function(r){ return '<dt>' + r[0] + '</dt><dd>' + esc(r[1]) + '</dd>'; }).join('');
+    result.hidden = false;
+  });
+
+  /* Copy WhatsApp number */
+  var copyBtn = document.getElementById('copy-wa');
+  copyBtn.addEventListener('click', function(){
+    var num = document.getElementById('wa-num');
+    var done = function(){ copyBtn.textContent = 'Tersalin'; setTimeout(function(){ copyBtn.textContent = 'Salin nomor'; }, 1600); };
+    var fallback = function(){ var r = document.createRange(); r.selectNodeContents(num); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); copyBtn.textContent = 'Tekan Ctrl+C'; };
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(num.textContent).then(done, fallback);
+      else fallback();
+    } catch (x) { fallback(); }
+  });
+
+  /* Legend highlights the matching probe in the cross-section */
+  var probes = document.querySelectorAll('.probe');
+  document.getElementById('legend').querySelectorAll('li').forEach(function(li){
+    li.addEventListener('mouseenter', function(){
+      probes.forEach(function(p){ var on = p.dataset.k === li.dataset.k; p.classList.toggle('hl', on); p.classList.toggle('dim', !on); });
+    });
+    li.addEventListener('mouseleave', function(){
+      probes.forEach(function(p){ p.classList.remove('hl', 'dim'); });
+    });
+  });
+})();
+</script>
+
+</body></html>
